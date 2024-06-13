@@ -57,17 +57,21 @@ const Customizer = () => {
 
     try {
       // Call our Back-End to generate an AI image!
-      setGeneratingImg(true)
+      /**
+       * setGeneratingImg(true)
+       *
+       * const response = await fetch(config.production.backendUrl, {
+       *   method: 'POST',
+       *   headers: { 'Content-Type': 'application/json' },
+       *   body: JSON.stringify({ prompt: prompt })
+       * })
+       *
+       * const data = await response.json()
+       *
+       * handleDecals(type, `data:image/png;base64,${data.photo}`)
+       */
 
-      const response = await fetch(config.production.backendUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: prompt })
-      })
-
-      const data = await response.json()
-
-      handleDecals(type, `data:image/png;base64,${data.photo}`)
+      alert('Unfortunately, my API key has expired :(')
     } catch (error) {
       alert(error)
     } finally {
